@@ -1,0 +1,63 @@
+﻿@model IEnumerable<HRMWebApplication.Models.Contract>
+
+@{
+    ViewBag.Title = "Список приказов";
+}
+
+<h2>Список приказов</h2>
+
+<p>
+    @Html.ActionLink("Создать новый приказ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Employee.FullName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Post.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContractText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderState)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrderText)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Department.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Post.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContractText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderState)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderText)
+        </td>
+        <td>
+            @Html.ActionLink("Подробно", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Подписать", "Sign", new { id = item.ID }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

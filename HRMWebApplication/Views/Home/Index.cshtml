@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Главная страница";
+}
+
+<h2></h2>
+
+<a href='@Url.Action("Index", "Employees")'>Сотрудники</a>
+<br>
+<a href='@Url.Action("Index", "Contracts")'>Приказы</a>
+
+@if (User.IsInRole("Администратор"))
+{
+<br>
+<a href='@Url.Action("Index", "Departments")'>Подразделения</a>
+<br>
+<a href='@Url.Action("Index", "Posts")'>Должности</a>
+}
+
+<br>
+<a href='@Reports.GetReportViewerPath()?%2fHRMReports%2frepWorkingEmployees&rs:Format=Excel&rs:ClearSession=true'>Работающие сотрудники</a>
+<br>
+<a href='@Reports.GetReportViewerPath()?%2fHRMReports%2frepAvgSalaryByDepartment&rs:Format=Excel&rs:ClearSession=true'>Средняя зарплата по подразделениям</a>
