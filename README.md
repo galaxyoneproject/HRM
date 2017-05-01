@@ -1,4 +1,4 @@
-# О программе
+﻿# О программе
 Программа кадрового учета сотрудников компании.
 Целевая платформа .NET 4.5.2
 Используемые технологии: C#, .NET ASP MVC 5 (движок Razor), Entity Framework Code First, БД MS SQL, SSRS
@@ -6,7 +6,7 @@
 # Начало работы
 1.	Прописать в конфикурационном файле Web.config строку подключения к БД.
 2.  Добавить в конфикурационном файле Web.config в секции appSettings ключ вида 
-	<add key="ReportViewerPath" value="http://localhost/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx"/>, 
+	"<add key="ReportViewerPath" value="http://localhost/ReportServer_SQLEXPRESS/Pages/ReportViewer.aspx"/>",
 	где value - путь к странице просмотра отчетов SSRS.
 3.	БД заполняется тестовыми данными при первом обращении к ней (см. модуль HRMModel.cs).
 	Для входа в систему можно использовать имена пользователей User (роль "Специалист") и Admin (роль "Администратор").	
